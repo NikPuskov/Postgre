@@ -16,7 +16,19 @@
 
 Выполнение домашнего задания:
 
-- Создаем три виртуальные машины:
+- Создаем три виртуальные машины с настройками с помощью ansible:
 
-`vagrant up`
+`vagrant up` 
+
+- Подключаемся к barman:
+
+`vagrant ssh barman`
+
+- Проверяем возможность подключения к postgres-серверу:
+
+`psql -h 192.168.56.11 -U barman -d postgres`
+
+- Проверяем репликацию:
+
+`psql -h 192.168.56.11 -U barman -c "IDENTIFY_SYSTEM" replication=1`
 
