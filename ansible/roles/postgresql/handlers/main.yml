@@ -1,7 +1,0 @@
----
-# handlers file for astra-postgresql
-- name: restart postgresql
-  ansible.builtin.service:
-    name: "{{ postgresql_daemon }}"
-    state: restarted
-

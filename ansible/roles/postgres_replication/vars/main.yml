@@ -1,3 +1,0 @@
----
-
-master_node: "{{ true if ansible_host == master_ip else false }}"
