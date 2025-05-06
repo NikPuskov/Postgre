@@ -20,16 +20,3 @@
 
 `vagrant up`
 
-1. Настройка hot_standby репликации с использованием слотов
-
-- Устанавливаем postgres-server на хосты node1 и node2:
-
-`apt install postgresql postgresql-contrib`
-
-`systemctl start postgresql`
-
-`systemctl enable postgresql`
-
-- Переходим к настройке репликации на хосте node1. Заходим в psql:
-
-- В psql создаём пользователя replicator c правами репликации:
