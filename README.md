@@ -32,3 +32,34 @@
 
 `psql -h 192.168.56.11 -U barman -c "IDENTIFY_SYSTEM" replication=1`
 
+![Image alt](https://github.com/NikPuskov/Postgre/blob/main/postgres1.jpg)
+
+- Проверим работу barman:
+
+`barman switch-wal node1`
+
+`barman cron`
+
+`barman check node1`
+
+![Image alt](https://github.com/NikPuskov/Postgre/blob/main/postgres2.jpg)
+
+- Запускаем резервную копию:
+
+`barman backup node1`
+
+![Image alt](https://github.com/NikPuskov/Postgre/blob/main/postgres3.jpg)
+
+Проверка восстановления из бекапов:
+
+- На хосте node1 в psql удаляем базы Otus:
+
+![Image alt](https://github.com/NikPuskov/Postgre/blob/main/postgres4.jpg)
+
+- На хосте barman запустим восстановление:
+
+![Image alt](https://github.com/NikPuskov/Postgre/blob/main/postgres5.jpg)
+
+- На хосте node1 потребуется перезапустить postgresql-сервер и снова проверить список БД. Базы otus должны вернуться обратно:
+
+![Image alt](https://github.com/NikPuskov/Postgre/blob/main/postgres6.jpg)
